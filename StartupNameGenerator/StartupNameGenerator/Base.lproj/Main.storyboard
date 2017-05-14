@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Name Generator View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="NameGeneratorViewController" customModule="StartupNameGenerator" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="pN8-Dd-HoO">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="luf-au-zsp">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="363"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="N9x-0U-Rgg">
+                                                <rect key="frame" x="20" y="60" width="374" height="283"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="STARTUP NAME GENERATOR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Xx3-DZ-Mgh" customClass="TitleLabel" customModule="StartupNameGenerator" customModuleProvider="target">
+                                                        <rect key="frame" x="73" y="0.0" width="229" height="21"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Tyo-8Y-bvV">
+                                                        <rect key="frame" x="20" y="85" width="334" height="198"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="JU5-sV-D0W">
+                                                                <rect key="frame" x="0.0" y="0.0" width="334" height="61"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Digite uma ou mais palavras" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="sjw-pO-rhP" customClass="InputLabel" customModule="StartupNameGenerator" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="334" height="21"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4uv-6y-hey">
+                                                                        <rect key="frame" x="0.0" y="31" width="334" height="30"/>
+                                                                        <nil key="textColor"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                        <textInputTraits key="textInputTraits"/>
+                                                                    </textField>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstItem="4uv-6y-hey" firstAttribute="width" secondItem="JU5-sV-D0W" secondAttribute="width" id="b8d-KI-JQl"/>
+                                                                    <constraint firstItem="sjw-pO-rhP" firstAttribute="width" secondItem="JU5-sV-D0W" secondAttribute="width" id="gAX-GG-c1y"/>
+                                                                </constraints>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="KUh-kH-48o">
+                                                                <rect key="frame" x="0.0" y="71" width="334" height="127"/>
+                                                                <subviews>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="flj-Qf-Ecu" customClass="CleanButton" customModule="StartupNameGenerator" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="25" width="124" height="77"/>
+                                                                        <state key="normal" title="Limpar"/>
+                                                                    </button>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hBc-15-zJS" customClass="GenerateButton" customModule="StartupNameGenerator" customModuleProvider="target">
+                                                                        <rect key="frame" x="134" y="25" width="200" height="77"/>
+                                                                        <state key="normal" title="Gerar"/>
+                                                                    </button>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstItem="hBc-15-zJS" firstAttribute="height" secondItem="KUh-kH-48o" secondAttribute="height" multiplier="0.6" id="apQ-8K-QOi"/>
+                                                                    <constraint firstItem="hBc-15-zJS" firstAttribute="width" secondItem="KUh-kH-48o" secondAttribute="width" multiplier="0.6" id="b77-zs-A4m"/>
+                                                                    <constraint firstItem="flj-Qf-Ecu" firstAttribute="height" secondItem="hBc-15-zJS" secondAttribute="height" id="eLZ-Js-cYn"/>
+                                                                </constraints>
+                                                            </stackView>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="Tyo-8Y-bvV" secondAttribute="trailing" constant="20" id="Kok-nu-paf"/>
+                                                    <constraint firstItem="Tyo-8Y-bvV" firstAttribute="leading" secondItem="N9x-0U-Rgg" secondAttribute="leading" constant="20" id="Mel-dl-p33"/>
+                                                    <constraint firstItem="Tyo-8Y-bvV" firstAttribute="height" secondItem="N9x-0U-Rgg" secondAttribute="height" multiplier="0.7" id="u7l-wF-92O"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.41960784313725491" green="0.44705882352941173" blue="0.49411764705882355" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="N9x-0U-Rgg" secondAttribute="trailing" constant="20" id="3B7-ws-TDt"/>
+                                            <constraint firstAttribute="bottom" secondItem="N9x-0U-Rgg" secondAttribute="bottom" constant="20" id="Dee-oA-28c"/>
+                                            <constraint firstItem="N9x-0U-Rgg" firstAttribute="top" secondItem="luf-au-zsp" secondAttribute="top" constant="60" id="aUo-Pa-zmm"/>
+                                            <constraint firstItem="N9x-0U-Rgg" firstAttribute="leading" secondItem="luf-au-zsp" secondAttribute="leading" constant="20" id="vwz-4i-lLK"/>
+                                        </constraints>
+                                    </view>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aRS-Mx-edU">
+                                        <rect key="frame" x="0.0" y="373" width="414" height="363"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </tableView>
+                                </subviews>
+                                <variation key="heightClass=compact" axis="horizontal"/>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.50196078431372548" green="0.71764705882352942" blue="0.29803921568627451" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="pN8-Dd-HoO" secondAttribute="bottom" id="DTS-vh-dKT"/>
+                            <constraint firstAttribute="trailing" secondItem="pN8-Dd-HoO" secondAttribute="trailing" id="Ok7-f5-Wd8"/>
+                            <constraint firstItem="pN8-Dd-HoO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="lYz-bN-N26"/>
+                            <constraint firstItem="pN8-Dd-HoO" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="pEq-ca-Yyf"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="aRS-Mx-edU" id="nZn-WJ-rmg"/>
+                        <outlet property="textField" destination="4uv-6y-hey" id="PVa-IZ-ZSH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="30.434782608695656" y="35.054347826086961"/>
+        </scene>
+    </scenes>
+</document>
