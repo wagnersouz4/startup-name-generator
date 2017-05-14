@@ -12,25 +12,19 @@ import Toaster
 class NameGeneratorViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var cleanButton: CleanButton!
+    @IBOutlet weak var generateButton: GenerateButton!
 
     fileprivate var generator: Generator!
-    fileprivate var generatedNames: [Name]!
+    fileprivate var generatedNames = [Name]()
 
     override func viewDidLoad() {
         setupTableView()
-        generateNames()
         configureToast()
     }
 
     private func configureToast() {
         ToastView.appearance().font = TypographyHelper.generateFont(using: .title3, with: .bold)
-    }
-
-    private func generateNames() {
-        if generator == nil {
-            generator = Generator()
-        }
-        generatedNames = generator.generateNames()
     }
 
     private func setupTableView() {
@@ -41,10 +35,26 @@ class NameGeneratorViewController: UIViewController {
     }
 }
 
+// Mark: @IBActions
+extension NameGeneratorViewController {
+    @IBAction private func generateNames() {
+        if generator == nil {
+            generator = Generator()
+        }
+        generatedNames = generator.generateNames()
+        tableView.reloadData()
+    }
+
+    @IBAction private func cleanNames() {
+        generatedNames = []
+        tableView.reloadData()
+    }
+}
+
 /// Controlling the FavoritableTableViewCell's button click
 extension NameGeneratorViewController: FavoritableTableViewCellButtonDelegate {
     func didPressButton(_ sender: IndexedUIButton) {
-        // Only if the name has not been favorited
+        // Only if the name has not been added as favorite
         if !generatedNames[sender.indexPath.row].isFavorited {
             generatedNames[sender.indexPath.row].isFavorited = true
             tableView.reloadRows(at: [sender.indexPath], with: .fade)
