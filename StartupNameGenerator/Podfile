@@ -1,0 +1,6 @@
+use_frameworks!
+
+target 'StartupNameGenerator' do
+	platform :ios, '10.3'
+ 	pod 'Toaster'
+end

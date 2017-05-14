@@ -20,29 +20,33 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="yk5-Jf-WJQ">
-                        <rect key="frame" x="8" y="13" width="253.5" height="20.5"/>
+                        <rect key="frame" x="8" y="13" width="263.5" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="unfavorited" translatesAutoresizingMaskIntoConstraints="NO" id="FIq-hO-Qkw">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gpk-3O-Q4J" customClass="IndexedUIButton" customModule="StartupNameGenerator" customModuleProvider="target">
                         <rect key="frame" x="281.5" y="5" width="33.5" height="33.5"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="33.5" id="hat-8H-Ji3"/>
-                            <constraint firstAttribute="height" constant="33.5" id="sT6-7O-Gfr"/>
+                            <constraint firstAttribute="height" constant="33.5" id="E9c-Al-368"/>
+                            <constraint firstAttribute="width" constant="33.5" id="Q9y-Hx-IlU"/>
                         </constraints>
-                    </imageView>
+                        <state key="normal" backgroundImage="unfavorited"/>
+                        <connections>
+                            <action selector="didPressButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="SAp-yv-rPN"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="yk5-Jf-WJQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="C8X-Fp-jEl"/>
-                    <constraint firstAttribute="trailing" secondItem="FIq-hO-Qkw" secondAttribute="trailing" constant="5" id="DBe-ZS-5Ll"/>
+                    <constraint firstItem="Gpk-3O-Q4J" firstAttribute="leading" secondItem="yk5-Jf-WJQ" secondAttribute="trailing" constant="10" id="Ors-Mx-5QK"/>
                     <constraint firstItem="yk5-Jf-WJQ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="5" id="a82-Hb-PIo"/>
-                    <constraint firstItem="FIq-hO-Qkw" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="g4C-sv-ssT"/>
-                    <constraint firstItem="FIq-hO-Qkw" firstAttribute="leading" secondItem="yk5-Jf-WJQ" secondAttribute="trailing" constant="20" id="wsJ-fD-Nu6"/>
+                    <constraint firstItem="Gpk-3O-Q4J" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="b5i-cF-hiO"/>
+                    <constraint firstAttribute="trailing" secondItem="Gpk-3O-Q4J" secondAttribute="trailing" constant="5" id="c9h-Th-Gyt"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="favoritedImageView" destination="FIq-hO-Qkw" id="n2n-pp-RVy"/>
+                <outlet property="favoriteButton" destination="Gpk-3O-Q4J" id="aTs-QR-1ZB"/>
                 <outlet property="nameLabel" destination="yk5-Jf-WJQ" id="LaD-eV-r6X"/>
             </connections>
         </tableViewCell>

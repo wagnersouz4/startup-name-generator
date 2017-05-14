@@ -8,10 +8,16 @@
 
 import UIKit
 
+protocol FavoritableTableViewCellButtonDelegate: class {
+    func didPressButton(_ sender: IndexedUIButton)
+}
+
 class FavoritableTableViewCell: UITableViewCell {
 
     @IBOutlet weak private var nameLabel: UILabel!
-    @IBOutlet weak var favoritedImageView: UIImageView!
+    @IBOutlet weak var favoriteButton: IndexedUIButton!
+
+    weak var buttonDelegate: FavoritableTableViewCellButtonDelegate?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,15 +28,17 @@ class FavoritableTableViewCell: UITableViewCell {
         nameLabel.font = TypographyHelper.customFont("Helvetica", using: .body, with: .regular)
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
-
-    func setup(with name: Name) {
+    func setup(with name: Name, indexPath: IndexPath) {
         nameLabel.text = name.description
+        favoriteButton.indexPath = indexPath
 
         if name.isFavorited {
-            favoritedImageView.image = #imageLiteral(resourceName: "favorited")
+            //favoriteButton.imageView?.image = #imageLiteral(resourceName: "favorited")
+            favoriteButton.setBackgroundImage(#imageLiteral(resourceName: "favorited"), for: .normal)
         }
+    }
+
+    @IBAction func didPressButton(_ sender: IndexedUIButton) {
+        self.buttonDelegate?.didPressButton(sender)
     }
 }
