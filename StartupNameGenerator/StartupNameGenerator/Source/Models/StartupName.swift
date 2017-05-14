@@ -41,6 +41,7 @@ extension StartupName {
             let favorite = NSManagedObject(entity: entity, insertInto: managedContext)
 
             favorite.setValue(startupName.description, forKeyPath: "name")
+            favorite.setValue(Date(), forKey: "creationDate")
 
             do {
                 try managedContext.save()
@@ -71,6 +72,8 @@ extension StartupName {
     static func loadFavorites(using appDelegate: AppDelegate) -> [StartupName] {
         let managedContext = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Favorite")
+        let sortDescriptor = NSSortDescriptor(key: "creationDate", ascending: false)
+        fetchRequest.sortDescriptors = [sortDescriptor]
 
         do {
             let names = try managedContext.fetch(fetchRequest)

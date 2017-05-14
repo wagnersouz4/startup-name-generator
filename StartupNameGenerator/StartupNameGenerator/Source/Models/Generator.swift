@@ -22,7 +22,7 @@ struct Generator {
             StartupName(description: "I")
         ]
 
-        let names = random + favorites
+        let names = favorites + random
         return names
     }
 }
