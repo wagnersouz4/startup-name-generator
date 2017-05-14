@@ -120,8 +120,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="cleanButton" destination="flj-Qf-Ecu" id="L9T-2O-XEI"/>
-                        <outlet property="generateButton" destination="hBc-15-zJS" id="AoW-t3-RmH"/>
                         <outlet property="tableView" destination="aRS-Mx-edU" id="nZn-WJ-rmg"/>
                         <outlet property="textField" destination="4uv-6y-hey" id="PVa-IZ-ZSH"/>
                     </connections>

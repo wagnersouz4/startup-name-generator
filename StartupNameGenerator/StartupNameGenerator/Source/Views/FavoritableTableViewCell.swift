@@ -28,14 +28,12 @@ class FavoritableTableViewCell: UITableViewCell {
         nameLabel.font = TypographyHelper.customFont("Helvetica", using: .body, with: .regular)
     }
 
-    func setup(with name: Name, indexPath: IndexPath) {
-        nameLabel.text = name.description
+    func setup(with startupName: StartupName, indexPath: IndexPath) {
+        nameLabel.text = startupName.description
         favoriteButton.indexPath = indexPath
 
-        if name.isFavorited {
-            //favoriteButton.imageView?.image = #imageLiteral(resourceName: "favorited")
-            favoriteButton.setBackgroundImage(#imageLiteral(resourceName: "favorited"), for: .normal)
-        }
+        let image = (startupName.isFavorited) ? #imageLiteral(resourceName: "favorited") : #imageLiteral(resourceName: "unfavorited")
+        favoriteButton.setBackgroundImage(image, for: .normal)
     }
 
     @IBAction func didPressButton(_ sender: IndexedUIButton) {

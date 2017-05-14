@@ -9,16 +9,20 @@
 import Foundation
 
 struct Generator {
-    func generateNames() -> [Name] {
-        return [
-            Name(description: "Agnd.me", isFavorited: true),
-            Name(description: "Agenápido"),
-            Name(description: "Agen9"),
-            Name(description: "Agenow"),
-            Name(description: "Venderdorly"),
-            Name(description: "Vendedorly"),
-            Name(description: "Agenda.me"),
-            Name(description: "Agenda Hub")
+    func generateNames(using appDelegate: AppDelegate) -> [StartupName] {
+        let favorites = StartupName.loadFavorites(using: appDelegate)
+        let random = [
+            StartupName(description: "A"),
+            StartupName(description: "B"),
+            StartupName(description: "D"),
+            StartupName(description: "C"),
+            StartupName(description: "F"),
+            StartupName(description: "G"),
+            StartupName(description: "H"),
+            StartupName(description: "I")
         ]
+
+        let names = random + favorites
+        return names
     }
 }

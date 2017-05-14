@@ -12,11 +12,9 @@ import Toaster
 class NameGeneratorViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var textField: UITextField!
-    @IBOutlet weak var cleanButton: CleanButton!
-    @IBOutlet weak var generateButton: GenerateButton!
 
     fileprivate var generator: Generator!
-    fileprivate var generatedNames = [Name]()
+    fileprivate var generatedNames = [StartupName]()
 
     override func viewDidLoad() {
         setupTableView()
@@ -41,12 +39,15 @@ extension NameGeneratorViewController {
         if generator == nil {
             generator = Generator()
         }
-        generatedNames = generator.generateNames()
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            fatalError("Error while obtaining the app delegate")
+        }
+        generatedNames = generator.generateNames(using: appDelegate)
         tableView.reloadData()
     }
 
     @IBAction private func cleanNames() {
-        generatedNames = []
+        generatedNames = generatedNames.filter { $0.isFavorited == true }
         tableView.reloadData()
     }
 }
@@ -64,19 +65,19 @@ extension NameGeneratorViewController: FavoritableTableViewCellButtonDelegate {
         }
     }
 
-    private func addToFavorites(_ name: Name) {
+    private func addToFavorites(_ startupName: StartupName) {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             fatalError("Error while obtaining the app delegate")
         }
 
-        if Name.addAsFavorite(name, using: appDelegate) {
-            showToast(using: name)
+        if StartupName.addAsFavorite(startupName, using: appDelegate) {
+            showToast(using: startupName)
         }
     }
 
-    private func showToast(using name: Name) {
+    private func showToast(using startupName: StartupName) {
         ToastCenter.default.cancelAll()
-        let toast = Toast(text: "\(name.description) foi adicionado como favorito.", duration: Delay.short)
+        let toast = Toast(text: "\(startupName.description) foi adicionado como favorito.", duration: Delay.short)
         toast.show()
     }
 }
