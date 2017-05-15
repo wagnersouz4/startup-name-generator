@@ -21,14 +21,13 @@ class FavoritableTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        configureUI()
     }
 
-    private func configureUI() {
-        nameLabel.font = TypographyHelper.customFont("Helvetica", using: .body, with: .regular)
-    }
+    func setup(with startupName: StartupName, indexPath: IndexPath, highlight: Bool = false) {
 
-    func setup(with startupName: StartupName, indexPath: IndexPath) {
+        let fontWeight: FontWeight = (highlight) ? .bold : .regular
+
+        nameLabel.font = TypographyHelper.customFont("Helvetica", using: .body, with: fontWeight)
         nameLabel.text = startupName.description
         favoriteButton.indexPath = indexPath
 

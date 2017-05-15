@@ -24,7 +24,7 @@
 		3BDC5C0C1EC803D200A591A1 /* InputLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDC5C041EC803D200A591A1 /* InputLabel.swift */; };
 		3BDC5C0E1EC803D200A591A1 /* RoundedCornersButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDC5C061EC803D200A591A1 /* RoundedCornersButton.swift */; };
 		3BDC5C0F1EC803D200A591A1 /* TitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDC5C071EC803D200A591A1 /* TitleLabel.swift */; };
-		3BDC5C121EC803F700A591A1 /* Generator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDC5C111EC803F700A591A1 /* Generator.swift */; };
+		3BDC5C121EC803F700A591A1 /* NameGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDC5C111EC803F700A591A1 /* NameGenerator.swift */; };
 		3BDC5C141EC8060000A591A1 /* UITableViewCellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDC5C131EC8060000A591A1 /* UITableViewCellExtension.swift */; };
 		3BDC5C161EC8066400A591A1 /* UITableViewExtenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDC5C151EC8066400A591A1 /* UITableViewExtenstion.swift */; };
 		3BDC5C181EC8957300A591A1 /* StartupName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDC5C171EC8957300A591A1 /* StartupName.swift */; };
@@ -67,7 +67,7 @@
 		3BDC5C041EC803D200A591A1 /* InputLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputLabel.swift; sourceTree = "<group>"; };
 		3BDC5C061EC803D200A591A1 /* RoundedCornersButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedCornersButton.swift; sourceTree = "<group>"; };
 		3BDC5C071EC803D200A591A1 /* TitleLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleLabel.swift; sourceTree = "<group>"; };
-		3BDC5C111EC803F700A591A1 /* Generator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Generator.swift; sourceTree = "<group>"; };
+		3BDC5C111EC803F700A591A1 /* NameGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameGenerator.swift; sourceTree = "<group>"; };
 		3BDC5C131EC8060000A591A1 /* UITableViewCellExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewCellExtension.swift; sourceTree = "<group>"; };
 		3BDC5C151EC8066400A591A1 /* UITableViewExtenstion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewExtenstion.swift; sourceTree = "<group>"; };
 		3BDC5C171EC8957300A591A1 /* StartupName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartupName.swift; sourceTree = "<group>"; };
@@ -212,7 +212,7 @@
 		3BDC5C101EC803DC00A591A1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				3BDC5C111EC803F700A591A1 /* Generator.swift */,
+				3BDC5C111EC803F700A591A1 /* NameGenerator.swift */,
 				3BDC5C171EC8957300A591A1 /* StartupName.swift */,
 			);
 			path = Models;
@@ -408,7 +408,7 @@
 			files = (
 				3BBC55D61EC79ABD003CEC3B /* AppDelegate.swift in Sources */,
 				3BDC5C0B1EC803D200A591A1 /* GenerateButton.swift in Sources */,
-				3BDC5C121EC803F700A591A1 /* Generator.swift in Sources */,
+				3BDC5C121EC803F700A591A1 /* NameGenerator.swift in Sources */,
 				3BBC560E1EC7AD72003CEC3B /* ButtonHelper.swift in Sources */,
 				3BDC5C0F1EC803D200A591A1 /* TitleLabel.swift in Sources */,
 				3BDC5C081EC803D200A591A1 /* CleanButton.swift in Sources */,

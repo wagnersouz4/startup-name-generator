@@ -1,5 +1,5 @@
 //
-//  Generator.swift
+//  NameGenerator.swift
 //  StartupNameGenerator
 //
 //  Created by Wagner Souza on 14/05/17.
@@ -8,8 +8,8 @@
 
 import Foundation
 
-struct Generator {
-    func generateNames(using words: String?, appDelegate: AppDelegate) -> [StartupName] {
+struct NameGenerator {
+    static func generate(using words: String?, appDelegate: AppDelegate) -> [StartupName] {
         let favorites = StartupName.loadFavorites(using: appDelegate)
         return favorites + generateRandom(words)
     }
@@ -31,9 +31,9 @@ struct Generator {
         return []
     }
 
-    private func generateRandom(_ seed: String?) -> [StartupName] {
+    private static func generateRandom(_ seed: String?) -> [StartupName] {
         var randomNames = [StartupName]()
-        let words = Generator.loadPortugueseWords()
+        let words = NameGenerator.loadPortugueseWords()
         let wordsCount = words.count
 
         var seedWords = [String]()
