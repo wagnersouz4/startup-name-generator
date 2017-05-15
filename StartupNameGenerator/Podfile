@@ -3,4 +3,9 @@ use_frameworks!
 target 'StartupNameGenerator' do
 	platform :ios, '10.3'
  	pod 'Toaster'
+  	target 'StartupNameGeneratorTests' do
+    		inherit! :search_paths
+    		pod 'Quick'
+    		pod 'Nimble'
+	end
 end
