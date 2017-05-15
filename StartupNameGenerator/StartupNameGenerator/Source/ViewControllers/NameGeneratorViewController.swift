@@ -42,7 +42,14 @@ extension NameGeneratorViewController {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             fatalError("Error while obtaining the app delegate")
         }
-        generatedNames = generator.generateNames(using: appDelegate)
+
+        // Refactor to use NSOrderedSet to improve performance
+        for startupName in generator.generateNames(using: textField.text, appDelegate: appDelegate) {
+            if !generatedNames.contains(startupName) {
+                generatedNames.append(startupName)
+            }
+        }
+
         tableView.reloadData()
     }
 
@@ -56,6 +63,7 @@ extension NameGeneratorViewController {
 extension NameGeneratorViewController: FavoritableTableViewCellButtonDelegate {
     func didPressButton(_ sender: IndexedUIButton) {
         // Only if the name has not been added as favorite
+
         if !generatedNames[sender.indexPath.row].isFavorited {
             generatedNames[sender.indexPath.row].isFavorited = true
             tableView.reloadRows(at: [sender.indexPath], with: .fade)

@@ -23,9 +23,15 @@ struct StartupName {
     }
 }
 
+/// Enabling the usage of the array contains method by conforming to Equatable
+extension StartupName: Equatable {
+    public static func == (lhs: StartupName, rhs: StartupName) -> Bool {
+        return lhs.description == rhs.description
+    }
+}
+
 /// Core data management
 extension StartupName {
-
     static func addAsFavorite(_ startupName: StartupName, using appDelegate: AppDelegate) -> Bool {
         let managedContext = appDelegate.persistentContainer.viewContext
 
@@ -85,7 +91,6 @@ extension StartupName {
                 }
                 favorites.append(StartupName(description: description, isFavorited: true))
             }
-
             return favorites
 
         } catch let error as NSError {
